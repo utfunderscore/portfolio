@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/* WebTUI imports */
+@import "@webtui/css/base.css";
+@import "@webtui/css/utils/box.css";
+@import "@webtui/css/components/typography.css";
+@import "@webtui/css/components/button.css";
+@import "@webtui/css/components/badge.css";
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

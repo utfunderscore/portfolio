@@ -6,7 +6,7 @@ import { Jersey_10 } from "next/font/google";
 import projects from "../data/projects.json";
 
 // Constant for icon size - change this to resize all icons at once
-const ICON_SIZE = 16;
+const ICON_SIZE = 25;
 
 // Configure Jersey 10 font with Latin subset and normal weight
 const jersey10 = Jersey_10({
@@ -22,12 +22,12 @@ export default function Home() {
       {/* Outer container with responsive max width */}
       <div className="w-full max-w-5xl">
         {/* First section box: Introduction with name and social links */}
-        <div className="border-3 border-gray-100 dark:border-neutral-800 bg-transparent shadow px-4 sm:px-8 py-8 flex flex-col items-center">
+        <div className="bg-transparent shadow px-4 sm:px-8 py-8 flex flex-col items-center">
           {/* Main title using Jersey 10 font */}
-          <h1 className={`text-5xl font-bold mb-2 ${jersey10.className}`} style={{ textShadow: '0 0 10px rgba(255, 255, 255, 0.5)' }}>utfunderscore</h1>
+          <h1 className={`text-5xl font-bold mb-2 ${jersey10.className}`}>utfunderscore</h1>
           {/* Social media icons container */}
-          <div className="flex items-center w-full max-w-md justify-center mb-2">
-            <div className="flex space-x-4 items-center">
+          <div className="flex items-center w-full max-w-md justify-center mb-10">
+            <div className="flex space-x-3 items-center">
               {/* GitHub link with custom SVG icon */}
               <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-blue-500 transition-colors flex items-center justify-center" style={{ height: ICON_SIZE, width: ICON_SIZE }}>
                 <Image src="/github.svg" alt="GitHub" width={ICON_SIZE} height={ICON_SIZE} />
@@ -44,7 +44,7 @@ export default function Home() {
           </div>
         </div>
         {/* Second section box: Projects showcase */}
-        <div className="border-b-3 border-l-3 border-r-3 border-gray-100 dark:border-neutral-800 bg-transparent shadow px-4 sm:px-8 py-8 flex flex-col items-center">
+        <div className=" dark:border-neutral-800 bg-transparent shadow px-4 sm:px-8 py-8 flex flex-col items-center">
           {/* Projects section */}
           <section className="w-full">
             {/* Projects heading */}
