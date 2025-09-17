@@ -1,0 +1,22 @@
+[
+  {
+    "title": "E-Commerce Platform",
+    "description": "A full-stack e-commerce website built with React and Node.js, featuring user authentication, payment integration, and inventory management.",
+    "technologies": ["React", "Node.js", "MongoDB", "Stripe API", "Express"]
+  },
+  {
+    "title": "Task Management App",
+    "description": "A collaborative task management application with real-time updates, allowing teams to create, assign, and track tasks efficiently.",
+    "technologies": ["Vue.js", "Firebase", "Socket.io", "Tailwind CSS"]
+  },
+  {
+    "title": "Weather Dashboard",
+    "description": "An interactive weather dashboard that displays current conditions and forecasts using data from multiple APIs, with a clean and responsive UI.",
+    "technologies": ["JavaScript", "HTML5", "CSS3", "OpenWeatherMap API", "Chart.js"]
+  },
+  {
+    "title": "Blog CMS",
+    "description": "A custom content management system for blogging, including rich text editing, SEO optimization, and user role management.",
+    "technologies": ["Next.js", "Prisma", "PostgreSQL", "Vercel", "MDX"]
+  }
+]

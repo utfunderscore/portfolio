@@ -1,103 +1,77 @@
+// Import Next.js Image component for optimized image loading
 import Image from "next/image";
+// Import Jersey 10 font from Google Fonts for the main title
+import { Jersey_10 } from "next/font/google";
+// Import projects data from JSON file
+import projects from "../data/projects.json";
 
+// Constant for icon size - change this to resize all icons at once
+const ICON_SIZE = 16;
+
+// Configure Jersey 10 font with Latin subset and normal weight
+const jersey10 = Jersey_10({
+  subsets: ["latin"],
+  weight: "400",
+});
+
+// Main page component
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    // Main container with full height, centered content, and monospace font
+    <main className="flex min-h-screen flex-col items-center justify-center p-8 font-mono">
+      {/* Outer container with responsive max width */}
+      <div className="w-full max-w-5xl">
+        {/* First section box: Introduction with name and social links */}
+        <div className="border-3 border-gray-100 dark:border-neutral-800 bg-transparent shadow px-4 sm:px-8 py-8 flex flex-col items-center">
+          {/* Main title using Jersey 10 font */}
+          <h1 className={`text-5xl font-bold mb-2 ${jersey10.className}`} style={{ textShadow: '0 0 10px rgba(255, 255, 255, 0.5)' }}>utfunderscore</h1>
+          {/* Social media icons container */}
+          <div className="flex items-center w-full max-w-md justify-center mb-2">
+            <div className="flex space-x-4 items-center">
+              {/* GitHub link with custom SVG icon */}
+              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-blue-500 transition-colors flex items-center justify-center" style={{ height: ICON_SIZE, width: ICON_SIZE }}>
+                <Image src="/github.svg" alt="GitHub" width={ICON_SIZE} height={ICON_SIZE} />
+              </a>
+              {/* Discord link with custom SVG icon */}
+              <a href="https://discord.com/" target="_blank" rel="noopener noreferrer" aria-label="Discord" className="hover:text-indigo-500 transition-colors flex items-center justify-center" style={{ height: ICON_SIZE, width: ICON_SIZE }}>
+                <Image src="/discord.svg" alt="Discord" width={ICON_SIZE} height={ICON_SIZE} />
+              </a>
+              {/* Email link with inline SVG icon */}
+              <a href="mailto:your@email.com" aria-label="Email" className="hover:text-rose-500 transition-colors flex items-center justify-center" style={{ height: ICON_SIZE, width: ICON_SIZE }}>
+                <svg width={ICON_SIZE} height={ICON_SIZE} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="block"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 6-10 7L2 6" /></svg>
+              </a>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        {/* Second section box: Projects showcase */}
+        <div className="border-b-3 border-l-3 border-r-3 border-gray-100 dark:border-neutral-800 bg-transparent shadow px-4 sm:px-8 py-8 flex flex-col items-center">
+          {/* Projects section */}
+          <section className="w-full">
+            {/* Projects heading */}
+            <h2 className="text-xl font-bold mb-4 text-center">Projects</h2>
+            {/* Grid layout for projects: 1 column on mobile, 2 on medium+ screens */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Map through projects array and render each project card */}
+              {projects.map((project, index) => (
+                <div key={index} className="border-2 border-gray-200 dark:border-neutral-700 p-4 bg-white/50 dark:bg-neutral-800/50">
+                  {/* Project title */}
+                  <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+                  {/* Project description */}
+                  <p className="text-gray-600 dark:text-gray-300 mb-3">{project.description}</p>
+                  {/* Technologies used - displayed as tags */}
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech, techIndex) => (
+                      <span key={techIndex} className="bg-gray-200 dark:bg-neutral-700 text-gray-800 dark:text-gray-200 px-2 py-1 text-sm">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
   );
 }
