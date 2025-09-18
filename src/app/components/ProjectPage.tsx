@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown, { Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { useRouter } from 'next/navigation';
 
@@ -19,58 +19,58 @@ export default function ProjectPage({ title, tags, content }: ProjectPageProps) 
   };
 
   // Custom components for styling markdown
-  const markdownComponents = {
-    h1: ({ children }: any) => (
+  const markdownComponents: Components = {
+    h1: ({ children }) => (
       <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mt-8 mb-6 first:mt-0">
         {children}
       </h1>
     ),
-    h2: ({ children }: any) => (
+    h2: ({ children }) => (
       <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mt-8 mb-4">
         {children}
       </h2>
     ),
-    h3: ({ children }: any) => (
+    h3: ({ children }) => (
       <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mt-6 mb-3">
         {children}
       </h3>
     ),
-    h4: ({ children }: any) => (
+    h4: ({ children }) => (
       <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mt-4 mb-2">
         {children}
       </h4>
     ),
-    p: ({ children }: any) => (
+    p: ({ children }) => (
       <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
         {children}
       </p>
     ),
-    ul: ({ children }: any) => (
+    ul: ({ children }) => (
       <ul className="list-disc pl-6 mb-4 space-y-2">
         {children}
       </ul>
     ),
-    ol: ({ children }: any) => (
+    ol: ({ children }) => (
       <ol className="list-decimal pl-6 mb-4 space-y-2">
         {children}
       </ol>
     ),
-    li: ({ children }: any) => (
+    li: ({ children }) => (
       <li className="text-gray-700 dark:text-gray-300">
         {children}
       </li>
     ),
-    strong: ({ children }: any) => (
+    strong: ({ children }) => (
       <strong className="font-semibold text-gray-900 dark:text-gray-100">
         {children}
       </strong>
     ),
-    em: ({ children }: any) => (
+    em: ({ children }) => (
       <em className="italic">
         {children}
       </em>
     ),
-    code: ({ children, className }: any) => {
+    code: ({ children, className }) => {
       const isBlock = className?.includes('language-');
       if (isBlock) {
         return (
@@ -85,17 +85,17 @@ export default function ProjectPage({ title, tags, content }: ProjectPageProps) 
         </code>
       );
     },
-    pre: ({ children }: any) => (
+    pre: ({ children }) => (
       <pre className="bg-gray-100 dark:bg-neutral-800 p-4 rounded-lg overflow-x-auto mb-4">
         {children}
       </pre>
     ),
-    blockquote: ({ children }: any) => (
+    blockquote: ({ children }) => (
       <blockquote className="border-l-4 border-gray-300 dark:border-gray-600 pl-4 italic text-gray-600 dark:text-gray-400 mb-4">
         {children}
       </blockquote>
     ),
-    a: ({ children, href }: any) => (
+    a: ({ children, href }) => (
       <a href={href} className="text-blue-600 dark:text-blue-400 hover:underline">
         {children}
       </a>
