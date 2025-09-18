@@ -25,42 +25,42 @@ export default function Home() {
       {/* Main box wrapping all content */}
       <div className="w-full max-w-3xl bg-white/80 dark:bg-neutral-900/80 shadow-lg border border-gray-100 dark:border-neutral-700 p-0 sm:p-0 flex flex-col">
         {/* Header section: top-aligned */}
-        <div className="bg-transparent shadow-none px-4 sm:px-8 pt-4 pb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-          <div className="flex items-center gap-3 h-full">
+        <div className="bg-transparent shadow-none px-4 sm:px-8 pt-8 pb-4 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+          <div className="flex items-start gap-3 h-full">
             <Image
               src="/best.webp"
               alt="utfunderscore avatar"
               width={64}
               height={64}
-              className="rounded-full"
               priority
             />
-            <h1
-              className={`text-5xl font-bold ${jersey10.className} min-w-0 break-words truncate`}
-              style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', fontSize: 'clamp(1.5rem, 7vw, 3rem)' }}
-            >
-              utfunderscore
-            </h1>
+            <div className="flex flex-col justify-between h-16">
+              <h1
+                className={`text-5xl font-bold ${jersey10.className} min-w-0 break-words truncate leading-none`}
+                style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', fontSize: 'clamp(1.5rem, 10vw, 3rem)' }}
+              >
+                utfunderscore
+              </h1>
+              <p className="text-gray-600 dark:text-gray-400 text-sm leading-none">
+                Connor Young
+              </p>
+            </div>
           </div>
           <div className="flex items-center space-x-3 mt-2 sm:mt-0">
             {/* GitHub link with custom SVG icon */}
-            <a href="https://github.com/utfunderscore" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-blue-500 transition-colors flex items-center justify-center" style={{ height: ICON_SIZE, width: ICON_SIZE }}>
+            <a href="https://github.com/utfunderscore/" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-blue-500 transition-colors flex items-center justify-center" style={{ height: ICON_SIZE, width: ICON_SIZE }}>
               <Image src="/github.svg" alt="GitHub" width={ICON_SIZE} height={ICON_SIZE} />
-            </a>
-            {/* Discord link with custom SVG icon */}
-            <a href="https://discord.com/" target="_blank" rel="noopener noreferrer" aria-label="Discord" className="hover:text-indigo-500 transition-colors flex items-center justify-center" style={{ height: ICON_SIZE, width: ICON_SIZE }}>
-              <Image src="/discord.svg" alt="Discord" width={ICON_SIZE} height={ICON_SIZE} />
             </a>
             {/* Email link with inline SVG icon */}
             <a href="mailto:connor675756@gmail.com" aria-label="Email" className="hover:text-rose-500 transition-colors flex items-center justify-center" style={{ height: ICON_SIZE, width: ICON_SIZE }}>
-              <svg width={ICON_SIZE} height={ICON_SIZE} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="block"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 6-10 7L2 6" /></svg>
+              <Image src="/mail.svg" alt="GitHub" width={ICON_SIZE} height={ICON_SIZE} />
             </a>
           </div>
         </div>
         {/* Description below header row */}
-        <div className="px-4 sm:px-8 pb-4">
-          <p className="text-gray-700 dark:text-gray-300 text-base w-4/5 max-w-3xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut laoreet dictum, urna erat ultricies risus, ac porta enim urna eu augue.
+        <div className="px-4 sm:px-8 pb-8">
+          <p className="text-gray-700 dark:text-gray-300 text-base">
+            Hey!
           </p>
         </div>
         {/* Divider: dashed line */}
